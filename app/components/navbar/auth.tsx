@@ -9,8 +9,6 @@ import User from "./user";
 const Auth = () => {
   const user = useUser();
 
-  console.log(user);
-
   return (
     <>
       <SignedOut>
