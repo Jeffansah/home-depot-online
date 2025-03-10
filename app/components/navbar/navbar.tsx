@@ -7,7 +7,7 @@ import Auth from "./auth";
 
 const Navbar = () => {
   return (
-    <div className="boxed flex items-center justify-between px-4 py-8">
+    <div className="boxed flex items-center justify-between p-8">
       <Navlinks />
       <Logo />
       <div className="flex items-center gap-6">

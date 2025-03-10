@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Catamaran } from "next/font/google";
+import { Catamaran } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/navbar";
 import { ClerkProvider } from "@clerk/nextjs";
+import { QueryClientProvider } from "@tanstack/react-query";
+import Footer from "./components/footer/footer";
 
 const catamaran = Catamaran({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -20,13 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`${catamaran.className} text-dark-400 relative`}>
+    <html lang="en">
+      <body className={`${catamaran.className} text-dark-400 relative`}>
+        <ClerkProvider>
           <Navbar />
           {children}
-        </body>
-      </html>
-    </ClerkProvider>
+          <Footer />
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }

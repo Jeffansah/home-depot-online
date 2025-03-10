@@ -36,7 +36,7 @@ const HomeBannerSlider = () => {
   };
 
   return (
-    <div className="relative h-full w-full bg-transparent">
+    <div className="bg-light-50 relative h-[568px] w-full">
       {currentSlide === 1 && <HomeSlider1 />}
       {currentSlide === 2 && <HomeSlider2 />}
       {currentSlide === 3 && <HomeSlider3 />}

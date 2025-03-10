@@ -28,5 +28,3 @@ export const connectToDatabase = async () => {
 
   return cached.conn;
 };
-
-//7fZrsNQEssdgISPU

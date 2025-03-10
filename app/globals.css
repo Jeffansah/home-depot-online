@@ -5,7 +5,7 @@
   --color-light-50: #f1f1f1;
   --color-light-100: #dedede;
   --color-light-200: #bbbbbb;
-  --color-dark-50: #929292;
+  --color-dark-50: #c1c1c1;
   --color-dark-400: #080808;
 }
 
@@ -14,7 +14,7 @@
     @apply text-dark-50;
   }
   /* .test-color {
-    color: #bbbbbb;
+    color: #c1c1c1;
   } */
 
   h1,

@@ -1,20 +1,32 @@
-import { addProduct } from "@/app/(server)/server-actions/product-actions/add-product.action";
-import React from "react";
+"use client";
 
-const FeaturedProducts = async () => {
-  const addedProduct = await addProduct({
-    title: "Basket with handles",
-    description:
-      "This beautifully crafted basket with handles is designed for both functionality and style. Made from high-quality materials, it offers durability and a chic aesthetic that complements any home decor. Perfect for organizing toys, blankets, or magazines, this versatile basket can be used in any room of your house. Its sturdy handles make it easy to carry, while its elegant design adds a touch of sophistication to your living space.",
-    price: 45,
-    images: ["../../../public/assets/images/products/basket-with-handles.jpg"],
-    categories: ["home decor"],
-    stock: 100,
-    slug: "basket-with-handles",
-    tags: ["basket", "storage", "decor"],
-  });
+import React, { Suspense, use, useEffect, useState } from "react";
+import FeaturedProductsList from "./featured-products-list";
+import LoadingProductCard from "../shared/loading-product-card";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-  return <div>FeaturedProducts</div>;
+const LoadingFeaturedProducts = () => {
+  return (
+    <div className="grid grid-cols-4 gap-16">
+      {Array.from({ length: 8 }).map((_, index) => (
+        <div className="" key={index}>
+          <LoadingProductCard />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const queryClient = new QueryClient();
+
+const FeaturedProducts = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Suspense fallback={<LoadingFeaturedProducts />}>
+        <FeaturedProductsList />
+      </Suspense>
+    </QueryClientProvider>
+  );
 };
 
 export default FeaturedProducts;
