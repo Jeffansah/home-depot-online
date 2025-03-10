@@ -1,6 +1,6 @@
 "use server";
 
-import Product, { IProduct } from "@/app/(server)/mongo/models/products.model";
+import { IProduct, Product } from "@/app/(server)/mongo/models/products.model";
 import { connectToDatabase } from "../../mongo";
 import { ICreateProduct } from "@/app/lib/types/product.types";
 
