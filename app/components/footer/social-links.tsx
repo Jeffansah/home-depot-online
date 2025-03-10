@@ -17,7 +17,10 @@ const SocialLinks = () => {
           const Icon = iconMap[link.name as keyof typeof iconMap];
           return (
             <Link key={link.name} href={link.href}>
-              <Icon size={16} className="fill-dark-400 text-white" />
+              <Icon
+                size={16}
+                className="fill-dark-400 hover:fill-dark-200 text-white transition-all duration-100"
+              />
             </Link>
           );
         })}

@@ -17,7 +17,7 @@ const FooterColumn = ({ title, links }: FooterColumnProps) => {
       <h4 className="text-sm font-medium uppercase">{title}</h4>
       <ul className="flex flex-col gap-3">
         {links.map((link) => (
-          <li key={link.href}>
+          <li key={link.href} className="max-w-max">
             <Link
               href={link.href}
               className="group text-light-200 hover:text-dark-400 flex items-center text-sm"
