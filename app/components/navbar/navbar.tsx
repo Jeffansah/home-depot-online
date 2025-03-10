@@ -7,14 +7,16 @@ import Auth from "./auth";
 
 const Navbar = () => {
   return (
-    <div className="boxed flex items-center justify-between p-8">
-      <Navlinks />
-      <Logo />
-      <div className="flex items-center gap-6">
-        <Cart />
-        <Auth />
-        <NavbarSearch />
-        <Advertisment />
+    <div className="fixed top-0 z-[100] w-full bg-white">
+      <div className="boxed relative flex items-center justify-between p-8">
+        <Navlinks />
+        <Logo />
+        <div className="flex items-center gap-6">
+          <Cart />
+          <Auth />
+          <NavbarSearch />
+          <Advertisment />
+        </div>
       </div>
     </div>
   );

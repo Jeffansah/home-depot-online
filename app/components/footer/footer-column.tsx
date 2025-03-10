@@ -24,7 +24,7 @@ const FooterColumn = ({ title, links }: FooterColumnProps) => {
             >
               <span className="relative flex items-center">
                 <ArrowRight className="absolute left-0 h-4 w-0 opacity-0 transition-all duration-200 group-hover:w-4 group-hover:opacity-100" />
-                <span className="transition-transform duration-200 group-hover:translate-x-5">
+                <span className="selection:bg-dark-400 transition-transform duration-200 group-hover:translate-x-5 selection:text-white">
                   {link.label}
                 </span>
               </span>

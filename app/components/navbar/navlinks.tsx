@@ -30,7 +30,7 @@ const Navlinks = () => {
         <Link
           href={link.href}
           key={link.label}
-          className={`text-xs uppercase ${
+          className={`selection:bg-dark-400 text-xs tracking-[0.15em] uppercase selection:text-white ${
             isActive(link.href) ? "text-dark-400 font-medium" : "text-dark-50"
           } hover:text-dark-400 transition-colors duration-100 ease-in-out`}
         >

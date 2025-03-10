@@ -16,7 +16,7 @@ const User = () => {
       <SignedIn>
         <div className="flex items-center gap-2">
           <UserButton />
-          <p className="text-dark-400 text-xs uppercase">
+          <p className="text-dark-400 text-xs font-medium tracking-[0.15em] uppercase">
             Hi, {user?.user?.firstName}
           </p>
         </div>

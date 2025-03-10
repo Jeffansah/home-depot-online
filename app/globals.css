@@ -6,7 +6,8 @@
   --color-light-100: #dedede;
   --color-light-200: #bbbbbb;
   --color-dark-50: #c1c1c1;
-  --color-dark-400: #080808;
+  --color-dark-200: #777777;
+  --color-dark-400: #111;
 }
 
 @layer utilities {
@@ -14,7 +15,7 @@
     @apply text-dark-50;
   }
   /* .test-color {
-    color: #c1c1c1;
+    color: #777777;
   } */
 
   h1,
@@ -23,11 +24,15 @@
   h4,
   h5,
   h6 {
-    @apply text-dark-400 tracking-widest;
+    @apply text-dark-400 selection:bg-dark-400 tracking-[0.15em] selection:text-white;
   }
 
   p {
-    @apply text-dark-50;
+    @apply text-dark-50 selection:bg-dark-400 font-light selection:text-white;
+  }
+
+  input {
+    @apply selection:text-dark-400 selection:bg-white;
   }
 
   .boxed {

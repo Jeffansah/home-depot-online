@@ -11,7 +11,9 @@ const iconMap = {
 const SocialLinks = () => {
   return (
     <div className="flex items-center gap-4 text-xs">
-      <span className="text-light-200 font-medium">Follow us</span>
+      <span className="text-light-200 selection:bg-dark-400 font-medium selection:text-white">
+        Follow us
+      </span>
       <div className="flex items-center gap-2">
         {socialLinks.map((link) => {
           const Icon = iconMap[link.name as keyof typeof iconMap];
