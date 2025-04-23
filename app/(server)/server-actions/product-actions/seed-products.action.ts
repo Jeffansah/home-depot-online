@@ -116,3 +116,33 @@ export async function seedProducts() {
     throw error;
   }
 }
+
+// export async function seedSingleCategoryProducts() {
+//   try {
+//     await connectToDatabase();
+
+//     const categories = await Category.find({});
+//     const categoryMap = new Map(
+//       categories.map((category) => [category.slug, category._id]),
+//     );
+
+//     const productsToSeed = sampleSingleCategoryProducts.map((product) => ({
+//       ...product,
+//       category: categoryMap.get(product.category),
+//     }));
+
+//     const operations = productsToSeed.map((product) => ({
+//       updateOne: {
+//         filter: { slug: product.slug },
+//         update: { $set: product },
+//         upsert: true,
+//       },
+//     }));
+
+//     const result = await Product.bulkWrite(operations);
+//     return JSON.parse(JSON.stringify(result));
+//   } catch (error) {
+//     console.error("Error seeding single category products:", error);
+//     throw error;
+//   }
+// }

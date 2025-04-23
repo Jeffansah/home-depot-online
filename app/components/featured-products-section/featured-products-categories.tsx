@@ -1,28 +1,30 @@
-"use client";
-
 import featuredProductsTabList from "@/app/lib/data/featured-products-tablist";
-import useFeaturedProductCategoryStore from "@/app/store/featured-product-category.store";
+import Link from "next/link";
 
-const FeaturedProductsCategories = () => {
-  const { category, setCategory } = useFeaturedProductCategoryStore();
-
+const FeaturedProductsCategories = ({
+  category,
+}: {
+  category: string | undefined;
+}) => {
   return (
     <div className="flex gap-8">
       {featuredProductsTabList.map((tab) => (
-        <h6
+        <Link
           key={tab.id}
-          onClick={() => setCategory(tab.slug)}
+          scroll={false}
+          prefetch={true}
+          href={`/?category=${tab.slug}`}
           className={`${
             !category && tab.slug === "all"
               ? "text-dark-400 font-medium"
               : category === tab.slug
                 ? "text-dark-400 font-medium"
                 : "text-dark-50"
-          } hover:text-dark-400 cursor-pointer text-xs uppercase transition-colors duration-100 ease-in-out`}
+          } hover:text-dark-400 cursor-pointer text-xs tracking-[0.15em] uppercase transition-colors duration-100 ease-in-out`}
         >
           {" "}
           {tab.name}
-        </h6>
+        </Link>
       ))}
     </div>
   );

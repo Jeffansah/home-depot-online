@@ -23,7 +23,7 @@ export const connectToDatabase = async () => {
   cached.conn = await cached.promise;
 
   if (!cached.conn) {
-    console.log("Connection to MongoDB failed");
+    throw new Error("MongoDB connection failed");
   }
 
   return cached.conn;

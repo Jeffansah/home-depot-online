@@ -1,9 +1,6 @@
-"use client";
-
-import React, { Suspense, use, useEffect, useState } from "react";
+import { Suspense } from "react";
 import FeaturedProductsList from "./featured-products-list";
 import LoadingProductCard from "../shared/loading-product-card";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const LoadingFeaturedProducts = () => {
   return (
@@ -17,15 +14,11 @@ const LoadingFeaturedProducts = () => {
   );
 };
 
-const queryClient = new QueryClient();
-
-const FeaturedProducts = () => {
+const FeaturedProducts = ({ category }: { category: string | undefined }) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Suspense fallback={<LoadingFeaturedProducts />}>
-        <FeaturedProductsList />
-      </Suspense>
-    </QueryClientProvider>
+    <Suspense fallback={<LoadingFeaturedProducts />}>
+      <FeaturedProductsList category={category} />
+    </Suspense>
   );
 };
 

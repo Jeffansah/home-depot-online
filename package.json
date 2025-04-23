@@ -3,23 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typegen": "npx sanity@latest schema extract && npx sanity@latest typegen generate"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "@clerk/express": "^1.3.52",
     "@clerk/nextjs": "^6.12.4",
+    "@prisma/client": "^6.6.0",
+    "@prisma/extension-accelerate": "^1.3.0",
     "@tailwindcss/postcss": "^4.0.12",
     "@tanstack/react-query": "^5.67.2",
     "better-auth": "^1.2.3",
     "lucide-react": "^0.479.0",
     "mongoose": "^8.12.1",
-    "next": "15.2.1",
+    "next": "^15.3.1",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "styled-components": "^6.1.15",
     "svix": "^1.61.3",
     "tailwindcss": "^4.0.12",
     "tailwindcss-animated": "^2.0.0",
@@ -31,6 +38,8 @@
     "@types/react-dom": "^19",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "prisma": "^6.6.0",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }
